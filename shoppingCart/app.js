@@ -22,7 +22,12 @@ function filterProducts() {
     for(let i=0;i<prodCount;i++){
         if((products[i].category === selectedCategory || selectedCategory === "all") && products[i].price <=priceThreshold){
             resultDiv.innerHTML += `<p>${products[i].name} - $${products[i].price}</p>`
+        }else {
+            var noProd = true;
         }
+    }
+    if(noProd){
+        alert("There are no products available in the selected category.");
     }
     // Step 1: Use a for loop to iterate through the products array
 
